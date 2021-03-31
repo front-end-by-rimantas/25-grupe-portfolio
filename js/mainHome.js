@@ -4,7 +4,6 @@
 /* clients */
 /* services */
 /* about company */
-/* hire us */
 /* achievements */
 /* promo video */
 /* case studies */
@@ -19,7 +18,6 @@
 /* clients */
 /* services */
 /* about company */
-/* hire us */
 /* achievements */
 /* promo video */
 /* case studies */
