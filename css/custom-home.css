@@ -6,11 +6,25 @@
 /* 3rd party */
 @import './3rd-party/font-awesome.min.css';
 /* components */
+@import './components/button.css';
 @import './components/footer.css';
 @import './components/header.css';
 
 /* CUSTOM STILIUS SEKCIJOMS */
 /* header */
+/* hero */
+/* clients */
 /* services */
+/* about company */
 /* achievements */
+/* promo video */
+/* case studies */
+/* testimonials */
+/* blog */
+/* contacts */
+.contact-us .btn {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
 /* footer */
