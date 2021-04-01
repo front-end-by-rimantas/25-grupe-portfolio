@@ -13,3 +13,27 @@
 .bg-grey {
   background-color: var(--color-grey);
 }
+
+.center {
+  text-align: center;
+}
+
+.title {
+  display: inline-block;
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-grey-dark);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  display: inline-block;
+  width: 100%;
+  font-size: 34px;
+  line-height: 40px;
+  color: #333;
+}
+.subtitle > .selected {
+  color: var(--color-blue);
+}
