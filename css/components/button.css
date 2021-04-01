@@ -15,3 +15,25 @@
 .btn:hover {
   box-shadow: 0 4px 8px #0003;
 }
+
+.btn.btn-white {
+  background-color: #fff;
+  color: var(--color-blue);
+}
+.btn.btn-creame {
+  background-color: var(--color-creame-dark);
+  color: #fff;
+}
+
+.btn.btn-hover-blue:hover {
+  background-color: var(--color-blue);
+  color: #fff;
+}
+.btn.btn-hover-white:hover {
+  background-color: #fff;
+  color: var(--color-blue);
+}
+.btn.btn-hover-creame:hover {
+  background-color: var(--color-creame-dark);
+  color: #fff;
+}
