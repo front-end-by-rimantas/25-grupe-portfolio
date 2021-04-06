@@ -1,0 +1,44 @@
+.service-item {
+  padding: 60px;
+  margin-bottom: 50px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 12px 30px #5553;
+  position: relative;
+}
+
+.service-item > img {
+  margin-bottom: 30px;
+}
+.service-item > h4 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: normal;
+  color: #000;
+  text-transform: capitalize;
+}
+.service-item > p {
+  color: #777;
+  font-size: 14px;
+  line-height: 27px;
+}
+.service-item > a {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  line-height: 60px;
+  background-color: var(--color-creame-dark);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  transition: all 1s;
+}
+.service-item:hover > a {
+  background-color: var(--color-blue);
+}
