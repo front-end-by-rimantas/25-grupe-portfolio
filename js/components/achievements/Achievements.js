@@ -43,6 +43,7 @@ class Achievements {
         this.DOM = DOM;
 
         this.render();
+        this.addEvents();
     }
 
     isValidSelector() {
@@ -86,7 +87,7 @@ class Achievements {
         for (const item of this.data.list) {
             HTML += `<div class="achievement">
                         <div class="title">${item.title}</div>
-                        <div class="number">${item.value}</div>
+                        <div class="number">0</div>
                         <div class="subtitle">${item.subtitle}</div>
                     </div>`;
         }
@@ -94,6 +95,47 @@ class Achievements {
         this.DOM.innerHTML = HTML;
     }
 
+    addEvents() {
+        addEventListener('scroll', () => {
+            const allNumbersDOM = this.DOM.querySelectorAll('.number');
+
+            for (let i = 0; i < allNumbersDOM.length; i++) {
+                const numberDOM = allNumbersDOM[i];
+                const elementTop = numberDOM.offsetTop;
+                const elementHeight = numberDOM.clientHeight;
+
+                const isVisible = scrollY + innerHeight >= elementTop + elementHeight;
+                if (isVisible) {
+                    this.animateNumber(numberDOM, i);
+                }
+            }
+        })
+    }
+
+    animateNumber(elementDOM, elementIndex) {
+        // prisingu atveju - animuoju ir pazymiu, jog jau suanimuota
+        if (this.data.list[elementIndex].animated !== true) {
+            const targetNumber = this.data.list[elementIndex].value;
+            this.data.list[elementIndex].animated = true;
+
+            const timeToAnimate = 3;                     // s
+            const fps = 30;                              // kartai per sekunde
+            const framesCount = timeToAnimate * fps;     // kiek is viso bus kadru
+            const numberIncrement = targetNumber / framesCount;
+            let printedValue = 0;
+            let currentFrameIndex = 0;
+
+            const timer = setInterval(() => {
+                printedValue += numberIncrement;
+                currentFrameIndex++;
+                elementDOM.innerText = Math.round(printedValue);
+
+                if (currentFrameIndex === framesCount) {
+                    clearInterval(timer);
+                }
+            }, 1000 / fps)
+        }
+    }
 }
 
 export { Achievements }

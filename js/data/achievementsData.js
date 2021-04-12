@@ -12,14 +12,14 @@ const achievementsData = {
             subtitle: 'Finished projects',
         },
         {
-            title: 'Recriut more than',
-            value: 245,
-            subtitle: 'Skilled experts',
-        },
-        {
             title: 'Blog update',
             value: 1090,
             subtitle: 'Media posts',
+        },
+        {
+            title: 'Recriut more than',
+            value: 245,
+            subtitle: 'Skilled experts',
         },
     ]
 }
