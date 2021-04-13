@@ -29,6 +29,12 @@
   height: 50px;
 }
 .header nav {
+  display: flex;
+  flex-direction: row;
+}
+.header nav a {
+  color: #333;
+  text-decoration: none;
 }
 .header nav > .item {
   display: inline-block;
@@ -56,4 +62,16 @@
 .header nav > .item:hover::before,
 .header nav > .item.selected::before {
   right: 0;
+}
+
+.header nav .dropdown {
+  display: flex;
+}
+.header nav .dropdown > .label {
+}
+.header nav .dropdown > .submenu {
+  display: none;
+}
+.header nav .dropdown:hover > .submenu {
+  display: flex;
 }

@@ -21,14 +21,37 @@ const headerData = {
     },
     nav: [
         {
-            type: 'link',
+            type: 'text',
             href: '#',
             text: 'Home',
+            submenu: [
+                { type: 'link', href: '#', text: 'Infotechno' },
+                { type: 'link', href: '#', text: 'Processing' },
+                { type: 'link', href: '#', text: 'Appointment' },
+                { type: 'link', href: '#', text: 'Services' },
+                { type: 'link', href: '#', text: 'Resolutions' },
+                { type: 'link', href: '#', text: 'Cybersecurity' },
+                { type: 'link', href: '#', text: 'Modern IT Company' },
+                { type: 'link', href: '#', text: 'Machine Learning' },
+                { type: 'link', href: '#', text: 'Software Innovation' },
+            ],
+            submenuDirection: 'bottom',
         },
         {
             type: 'link',
             href: '#',
             text: 'Company',
+            submenu: [
+                { type: 'link', href: '#', text: 'About us' },
+                { type: 'link', href: '#', text: 'Contact us' },
+                { type: 'link', href: '#', text: 'Leadership' },
+                { type: 'link', href: '#', text: 'Why choose us' },
+                { type: 'link', href: '#', text: 'Our history' },
+                { type: 'link', href: '#', text: 'FAQs' },
+                { type: 'link', href: '#', text: 'Careers' },
+                { type: 'link', href: '#', text: 'Pricing plans' },
+            ],
+            submenuDirection: 'bottom',
         },
         {
             type: 'link',

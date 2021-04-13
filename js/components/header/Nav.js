@@ -33,11 +33,35 @@ class Nav {
         return true;
     }
 
+    submenuDirection(direction) {
+        const available = ['bottom', 'right', 'left'];
+        return available.includes(direction) ? direction : available[0];
+    }
+
+    generateHTML(item) {
+        let HTML = '';
+
+        if (item.submenu) {
+            const labelHMTL = item.type === 'link'
+                ? `<a href="${item.href}" class="label">${item.text}</a>`
+                : `<div class="label">${item.text}</div>`;
+
+            HTML += `<div class="item dropdown ${this.submenuDirection(item.submenuDirection)}">
+                        ${labelHMTL}
+                        <div class="submenu">SUBMENU</div>
+                    </div>`;
+        } else {
+            HTML += `<a href="${item.href}" class="item">${item.text}</a>`;
+        }
+
+        return HTML;
+    }
+
     render() {
         let HTML = '';
 
-        for (const link of this.data) {
-            HTML += `<a class="item" href="${link.href}">${link.text}</a>`;
+        for (const item of this.data) {
+            HTML += this.generateHTML(item);
         }
 
         this.DOM.insertAdjacentHTML('beforeend', `<nav>${HTML}</nav>`);
