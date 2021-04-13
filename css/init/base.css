@@ -66,6 +66,20 @@
   color: var(--color-grey-dark);
   text-transform: uppercase;
 }
+.title > .underline {
+  position: relative;
+  z-index: 1;
+}
+.title > .underline::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background-color: aqua;
+  height: 20px;
+  z-index: -1;
+}
 
 .subtitle {
   display: inline-block;
