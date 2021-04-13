@@ -1,4 +1,6 @@
 import { TopText } from './TopText.js';
+import { Logo } from './Logo.js';
+import { Nav } from './Nav.js';
 
 /*
 Jeigu nori susikurti Header su siuo komponentu, viskas ko tau reikia yra
@@ -32,12 +34,7 @@ class Header {
 
         this.DOM.classList.add('header');
 
-        this.renderBase();
-        // sukurti top-text
-        // sukurti logo
-        // sukurti nav
-        // sukurti kalbas
-        // sukurti search
+        this.render();
         // uzregistruoti event - scroll - position: static/fixed
     }
 
@@ -49,14 +46,16 @@ class Header {
         return true;
     }
 
-    renderBase() {
-        const HTML = `<div class="row"><div class="col-12"></div></div>
-                    <div class="row"><div class="col-12"></div></div>`;
+    render() {
+        const HTML = `<div class="row top-text"></div>
+                    <div class="row"><div class="col-12 bottom-content"></div></div>`;
         this.DOM.innerHTML = HTML;
 
-        const allColsDOM = this.DOM.querySelectorAll('.col-12');
+        const allColsDOM = this.DOM.querySelectorAll('.row');
 
         new TopText(allColsDOM[0], this.data.topText);
+        new Logo(allColsDOM[1], this.data.logo);
+        new Nav(allColsDOM[1], this.data.nav);
     }
 }
 

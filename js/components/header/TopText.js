@@ -37,6 +37,7 @@ class TopText {
 
     render() {
         if (!this.data.isVisible) {
+            this.DOM.closest('.row').remove();
             return false;
         }
 
