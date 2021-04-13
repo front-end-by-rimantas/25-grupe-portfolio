@@ -1,5 +1,8 @@
 // IMPORT
 /* header */
+import { Header } from './components/header/Header.js';
+import { headerData } from './data/headerData.js';
+
 /* hero */
 /* clients */
 import { servicesData } from './data/servicesData.js';
@@ -20,6 +23,8 @@ import { achievementsData } from './data/achievementsData.js';
 
 // FUNKCIJU PANAUDOJIMAS
 /* header */
+new Header('#main_header', headerData);
+
 /* hero */
 /* clients */
 /* services */
