@@ -4,6 +4,7 @@ class Languages {
         this.data = data;
 
         this.DOM = null;
+        this.localStorageLangKey = 'portfolio-lang';
 
         this.init();
     }
@@ -23,6 +24,7 @@ class Languages {
         this.DOM = DOM;
 
         this.render();
+        this.addEvents();
     }
 
     isValidDOM() {
@@ -35,7 +37,7 @@ class Languages {
 
     render() {
         const { imgPath, defaultLang, list } = this.data;
-        const selectedLang = defaultLang;
+        const selectedLang = localStorage.getItem(this.localStorageLangKey) || defaultLang;
         const selectedLangData = list[selectedLang];
 
         let otherLangsHTML = '';
@@ -43,7 +45,7 @@ class Languages {
             const lang = list[langKey];
 
             if (langKey !== selectedLang) {
-                otherLangsHTML += `<div class="item">
+                otherLangsHTML += `<div class="item" data-lang-short="${langKey}">
                                     <img src="${imgPath + lang.img}" alt="${lang.full} flag">
                                     <span>${lang.full}</span>
                                 </div>`;
@@ -60,6 +62,18 @@ class Languages {
                     </div>`;
 
         this.DOM.insertAdjacentHTML('beforeend', HTML)
+    }
+
+    addEvents() {
+        const otherLangs = this.DOM.querySelectorAll('.languages .item');
+
+        for (const lang of otherLangs) {
+            lang.addEventListener('click', () => {
+                const short = lang.dataset.langShort;
+                localStorage.setItem(this.localStorageLangKey, short);
+                location.reload();
+            })
+        }
     }
 }
 

@@ -127,17 +127,14 @@ const headerData = {
         defaultLang: 'en',
         list: {
             en: {
-                short: 'en',
                 full: 'English',
                 img: 'en.png',
             },
             fr: {
-                short: 'fr',
                 full: 'Français',
                 img: 'fr.png',
             },
             de: {
-                short: 'de',
                 full: 'Deutsch',
                 img: 'de.png',
             },
