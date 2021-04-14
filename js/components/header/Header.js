@@ -35,7 +35,7 @@ class Header {
         this.DOM.classList.add('header');
 
         this.render();
-        // uzregistruoti event - scroll - position: static/fixed
+        this.addEvents();
     }
 
     isValidSelector() {
@@ -57,6 +57,19 @@ class Header {
         new Logo(allRowsDOM[1], this.data.logo);
         new Nav(allRowsDOM[1], this.data.nav);
         new Logo(allRowsDOM[1], this.data.logo);
+    }
+
+    addEvents() {
+        const fixHeaderPositionAtHeight = 200;
+        const staticHeaderPositionAtHeight = 40;
+        addEventListener('scroll', () => {
+            if (scrollY >= fixHeaderPositionAtHeight) {
+                this.DOM.classList.add('fixed');
+            }
+            if (scrollY < staticHeaderPositionAtHeight) {
+                this.DOM.classList.remove('fixed');
+            }
+        })
     }
 }
 

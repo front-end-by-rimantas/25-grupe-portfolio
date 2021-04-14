@@ -1,6 +1,13 @@
 .container.header {
   padding: 0;
   position: relative;
+  background-color: #fff;
+  box-shadow: 0 10px 20px #0002;
+}
+.container.header.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 .header > .row {
   margin-top: 0;
@@ -16,6 +23,9 @@
   justify-content: center;
   line-height: 24px;
   border-bottom: 1px solid #ccc;
+}
+.header.fixed .top-text {
+  display: none;
 }
 
 .header .bottom-content {
