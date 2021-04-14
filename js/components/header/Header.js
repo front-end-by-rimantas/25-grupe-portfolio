@@ -1,6 +1,8 @@
 import { TopText } from './TopText.js';
 import { Logo } from './Logo.js';
 import { Nav } from './Nav.js';
+import { Languages } from './Languages.js';
+import { Search } from './Search.js';
 
 /*
 Jeigu nori susikurti Header su siuo komponentu, viskas ko tau reikia yra
@@ -56,7 +58,8 @@ class Header {
         new TopText(allRowsDOM[0], this.data.topText);
         new Logo(allRowsDOM[1], this.data.logo);
         new Nav(allRowsDOM[1], this.data.nav);
-        new Logo(allRowsDOM[1], this.data.logo);
+        new Languages(allRowsDOM[1], this.data.languages);
+        new Search(allRowsDOM[1]);
     }
 
     addEvents() {

@@ -124,24 +124,24 @@ const headerData = {
     ],
     languages: {
         imgPath: './img/languages/',
-        default: 'en',
-        list: [
-            {
+        defaultLang: 'en',
+        list: {
+            en: {
                 short: 'en',
                 full: 'English',
-                img: 'en.jpg',
+                img: 'en.png',
             },
-            {
+            fr: {
                 short: 'fr',
                 full: 'Français',
-                img: 'fr.jpg',
+                img: 'fr.png',
             },
-            {
+            de: {
                 short: 'de',
                 full: 'Deutsch',
-                img: 'de.jpg',
+                img: 'de.png',
             },
-        ]
+        }
     }
 }
 
