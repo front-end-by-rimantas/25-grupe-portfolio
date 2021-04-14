@@ -43,12 +43,19 @@ class Nav {
 
         if (item.submenu) {
             const labelHMTL = item.type === 'link'
-                ? `<a href="${item.href}" class="label">${item.text}</a>`
-                : `<div class="label">${item.text}</div>`;
+                ? `<a href="${item.href}" class="label">${item.text}<i class="fa fa-angle-down"></i></a>`
+                : `<div class="label">${item.text}<i class="fa fa-angle-down"></i></div>`;
+
+            let subMenuHTML = '';
+            for (const subMenuItem of item.submenu) {
+                subMenuHTML += this.generateHTML(subMenuItem);
+            }
 
             HTML += `<div class="item dropdown ${this.submenuDirection(item.submenuDirection)}">
                         ${labelHMTL}
-                        <div class="submenu">SUBMENU</div>
+                        <div class="submenu">
+                            ${subMenuHTML}
+                        </div>
                     </div>`;
         } else {
             HTML += `<a href="${item.href}" class="item">${item.text}</a>`;

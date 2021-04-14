@@ -51,11 +51,12 @@ class Header {
                     <div class="row"><div class="col-12 bottom-content"></div></div>`;
         this.DOM.innerHTML = HTML;
 
-        const allColsDOM = this.DOM.querySelectorAll('.row');
+        const allRowsDOM = this.DOM.querySelectorAll('.row');
 
-        new TopText(allColsDOM[0], this.data.topText);
-        new Logo(allColsDOM[1], this.data.logo);
-        new Nav(allColsDOM[1], this.data.nav);
+        new TopText(allRowsDOM[0], this.data.topText);
+        new Logo(allRowsDOM[1], this.data.logo);
+        new Nav(allRowsDOM[1], this.data.nav);
+        new Logo(allRowsDOM[1], this.data.logo);
     }
 }
 
