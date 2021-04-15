@@ -1,0 +1,65 @@
+:root {
+  --min-item-width: 260px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+.gallery > .filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.gallery > .filter > .item {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.gallery > .filter > .item:hover {
+  color: #f00;
+}
+.gallery > .filter > .item.active {
+  color: #f00;
+  border-bottom: 2px solid #f00;
+}
+.gallery > .list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-item-width), 1fr));
+  gap: 30px;
+}
+.gallery > .list > .item {
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  position: relative;
+}
+.gallery .item > img {
+  width: 100%;
+  height: var(--min-item-width);
+}
+.gallery .item > .title {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f00;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: capitalize;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.gallery .item:hover > .title {
+  opacity: 1;
+}
+
+@media (min-width: 1000px) {
+  :root {
+    --min-item-width: 300px;
+  }
+}

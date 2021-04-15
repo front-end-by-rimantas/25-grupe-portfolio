@@ -4,6 +4,10 @@ import { Header } from './components/header/Header.js';
 import { headerData } from './data/headerData.js';
 
 /* hero */
+/* portfolio gallery */
+import { Gallery } from './components/gallery/Gallery.js';
+import { portfolioData } from './data/portfolioData.js';
+
 /* clients */
 import { servicesData } from './data/servicesData.js';
 import { services } from './components/services/services.js';
@@ -26,6 +30,9 @@ import { achievementsData } from './data/achievementsData.js';
 new Header('#main_header', headerData);
 
 /* hero */
+/* portfolio */
+new Gallery('#portfolio_block', portfolioData);
+
 /* clients */
 /* services */
 services('#services_block', servicesData);
