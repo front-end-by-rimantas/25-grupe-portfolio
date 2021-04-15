@@ -4,6 +4,8 @@ class Gallery {
         this.data = data;
 
         this.DOM = null;
+        this.activeFilterIndex = 0;
+        this.uniqueTags = [];
 
         this.init();
     }
@@ -23,8 +25,7 @@ class Gallery {
         }
 
         this.render();
-
-        console.log(this);
+        this.addEvents();
     }
 
     isValidSelector() {
@@ -77,7 +78,23 @@ class Gallery {
             HTML += `<div class="item">${tag}</div>`;
         }
 
+        this.uniqueTags = ['all', ...uniqueTags];
+
         return HTML;
+    }
+
+    addEvents() {
+        const filterItems = this.DOM.querySelectorAll('.filter > .item');
+
+        filterItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                filterItems[this.activeFilterIndex].classList.remove('active');
+                item.classList.add('active');
+                this.activeFilterIndex = index;
+
+                console.log(this.uniqueTags[index]);
+            })
+        });
     }
 }
 
