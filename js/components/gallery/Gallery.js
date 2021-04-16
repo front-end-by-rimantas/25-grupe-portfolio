@@ -4,6 +4,7 @@ class Gallery {
         this.data = data;
 
         this.DOM = null;
+        this.allGalleryItemsDOM = [];
         this.activeFilterIndex = 0;
         this.uniqueTags = [];
 
@@ -24,6 +25,7 @@ class Gallery {
             return false;
         }
 
+        this.formatData();
         this.render();
         this.addEvents();
     }
@@ -36,11 +38,20 @@ class Gallery {
         return true;
     }
 
+    formatData() {
+        for (const item of this.data.list) {
+            for (let i = 0; i < item.tags.length; i++) {
+                item.tags[i] = item.tags[i].toLowerCase();
+            }
+        }
+    }
+
     render() {
         const HTML = `<div class="filter">${this.generateFilter()}</div>
                     <div class="list">${this.generateList()}</div>`;
         this.DOM.innerHTML = HTML;
         this.DOM.classList.add('gallery');
+        this.allGalleryItemsDOM = this.DOM.querySelectorAll('.list > .item');
     }
 
     generateList() {
@@ -68,9 +79,8 @@ class Gallery {
 
         // atfiltruojame tik unikalius
         for (const tag of allTags) {
-            const formatedTag = tag.toLowerCase();
-            if (!uniqueTags.includes(formatedTag)) {
-                uniqueTags = [...uniqueTags, formatedTag];
+            if (!uniqueTags.includes(tag)) {
+                uniqueTags = [...uniqueTags, tag];
             }
         }
 
@@ -92,9 +102,20 @@ class Gallery {
                 item.classList.add('active');
                 this.activeFilterIndex = index;
 
-                console.log(this.uniqueTags[index]);
+                this.updateList(this.uniqueTags[index]);
             })
         });
+    }
+
+    updateList(tag) {
+        for (let i = 0; i < this.data.list.length; i++) {
+            const itemTags = this.data.list[i].tags;
+            if (itemTags.includes(tag) || tag === 'all') {
+                this.allGalleryItemsDOM[i].classList.remove('hidden');
+            } else {
+                this.allGalleryItemsDOM[i].classList.add('hidden');
+            }
+        }
     }
 }
 

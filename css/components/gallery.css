@@ -36,9 +36,14 @@
   background-color: #ccc;
   position: relative;
 }
+.gallery > .list > .item.hidden {
+  display: none;
+}
 .gallery .item > img {
   width: 100%;
   height: var(--min-item-width);
+  object-fit: cover;
+  object-position: center;
 }
 .gallery .item > .title {
   padding: 20px;
