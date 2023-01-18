@@ -11,17 +11,13 @@
 
 <body>
     <!-- HEADER START -->
-    <header class="container">
-        <div class="row">
-            TOP-TEXT + LOGO + NAV + LANG + SEARCH
-        </div>
-    </header>
+    <header id="main_header" class="container"></header>
     <!-- HEADER END -->
 
     <!-- HERO START -->
     <div class="container bg-creame">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-5">
+            <div id="demo" class="col-12 col-md-6 col-lg-5">
                 TEXTS
                 <!-- <div class="btn">Get details</div> -->
                 <div class="btn btn-hover-blue">blue-blue</div>
@@ -44,22 +40,21 @@
     <!-- CLIENTS END -->
 
     <!-- SERVICES START -->
-    <div class="container bg-grey">
+    <div class="container bg-grey services">
         <div class="row">
             <div class="col-12 col-lg-10 ml-lg-1 col-xl-8 ml-xl-2 center">
-                <h2 class="title">Our services</h2>
+                <h2 class="title">Our <span class="underline">services</span></h2>
                 <h3 class="subtitle">For your very specific industry, we have <span class="selected">highly-tailored IT solutions.</span></h3>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-                SERVICE ITEM 1
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                SERVICE ITEM 2
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                SERVICE ITEM 3
+            <div id="services_block" class="col-12 services-list">
+                <!-- <div class="service-item">
+                    <img src="./img/services/mitech-box-image-style-01-image-01-100x108.png" alt="">
+                    <h4>IT design</h4>
+                    <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                    <a href="#" class="fa fa-long-arrow-right"></a>
+                </div> -->
             </div>
         </div>
         <div class="row">
@@ -110,17 +105,8 @@
     <!-- ACHIEVEMENTS START -->
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-3">
-                ACHIEVEMENT 1
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                ACHIEVEMENT 2
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                ACHIEVEMENT 3
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                ACHIEVEMENT 4
+            <div id="achievements_block" class="col-12 achievements-list">
+                ACHIEVEMENT CONTENT
             </div>
         </div>
     </div>
@@ -228,6 +214,8 @@
         </div>
     </div>
     <!-- FOOTER END -->
+
+    <script src="./js/mainHome.js" type="module" defer></script>
 </body>
 
 </html>
